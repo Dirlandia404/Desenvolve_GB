@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --cor--principal: #faf0e6;
+  --cor--secundaria: #352f44;
+  --cor--terciaria: #5c5470;
+  --cor--hover: #b9b4c7;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Remove os estilos de lista padrão */
+}
+
+body {
+  background-color: var(--cor--principal);
+  color: var(--cor--secundaria);
+  box-sizing: border-box;
+}
+.cabecalho {
+  padding: 2% 0 0 15%;
+  margin: 10px;
+}
+.cabecalho__menu {
+  display: flex;
+  gap: 80px;
+}
+.cabecalho__menu__Link {
+  text-decoration: none;
+  color: var(--cor--terciaria);
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+.section__header2 {
+  background-color: var(--cor--terciaria);
+  color: var(--cor--principal);
+  height: 33vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+.section__menu {
+  display: flex;
+  justify-content: center;
+}
+.section__produtos {
+  padding: 5%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.column-item {
+  padding: 5%;
+  margin: 10%;
+  width: 350px;
+}
+img {
+  width: 200px;
+}
+img:hover {
+  width: 250px;
+  padding: 0;
+  margin: 0%;
+}
+
+.rodape {
+  padding: 24px;
+  background-color: var(--cor--terciaria);
+  color: var(--cor--principal);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
