@@ -26,7 +26,7 @@
     <header class="cabecalho">
       <div class="container">
         <input type="checkbox" id="menu" class="container__botao" />
-        <label for="menu">
+        <label for="menu" class="container__rotulo">
           <span class="cabecalho__menu-hamburger container__imagem"></span>
         </label>
         <ul class="lista-menu">
@@ -60,7 +60,7 @@
 
       <ul class="opções">
         <input type="checkbox" id="opções-menu" class="opções__botão" />
-        <label for="opções-menu">
+        <label for="opções-menu" class="opções__rotulo">
           <li class="opções__item">Categorias</li>
         </label>
         <ul class="lista-menu">
@@ -84,9 +84,7 @@
         <li class="opções__item">
           <a href="#" class="opções__link">Favoritos</a>
         </li>
-        <li class="opções__item">
-          <a href="#" class="opções__link">Favoritos</a>
-        </li>
+
         <li class="opções__item">
           <a href="#" class="opções__link">Minha estante</a>
         </li>
@@ -96,13 +94,16 @@
           <img
             src="./assets/Favoritos.svg"
             class="container__imagem container__imagem-transparente"
-        /></a>
-        <a href="#">
-          <img src="./assets/Compras.svg" class="container__imagem"
-        /></a>
-        <a href="#">
-          <img src="./assets/Usuario.svg" class="container__imagem"
-        /></a>
+          />
+        </a>
+        <a href="#" class="container__link">
+          <img src="./assets/Compras.svg" class="container__imagem" />
+          <p class="container__texto">Minha sacola</p>
+        </a>
+        <a href="#" class="container__link">
+          <img src="./assets/Usuario.svg" class="container__imagem" />
+          <p class="container__texto">Meu perfil</p>
+        </a>
       </div>
     </header>
     <section class="banner">
