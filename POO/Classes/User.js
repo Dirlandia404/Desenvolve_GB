@@ -62,6 +62,6 @@ export default class User {
     this.#email = novoEmail;
   }
   exibirInfos() {
-    return `${this.email}`;
+    return `${this.nome},${this.role}`;
   }
 }
