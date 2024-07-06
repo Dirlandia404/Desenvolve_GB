@@ -1,4 +1,11 @@
-import { afterEach, beforeEach, describe } from "@jest/globals";
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  jest,
+  expect,
+  it,
+} from "@jest/globals";
 import app from "../../app.js";
 import request from "supertest";
 
@@ -35,14 +42,52 @@ describe("POST em editoras/:id", () => {
       .expect(201);
     idResposta = resposta.body.content.id;
   });
+  it("Deve não adicionar nada ao passar o body vazio", async () => {
+    await request(app).post("/editoras").send({}).expect(400);
+  });
 });
+describe("GET em editoras/:id", () => {
+  it("Deve retornar recurso selecionado", async () => {
+    await request(app).get(`/editoras/${idResposta}`).expect(200);
+  });
+});
+
+describe("PUT em editoras/:id", () => {
+  it.each([
+    [
+      "nome",
+      {
+        nome: "Editora Teste Atualizada",
+      },
+    ],
+    [
+      "email",
+      {
+        email: "e@e.com",
+      },
+    ],
+    [
+      "nome e email",
+      {
+        nome: "Editora Teste Atualizada2",
+        email: "e@e.com",
+      },
+    ],
+  ])("Deve atualizar %s", async (chave, param) => {
+    const requisicao = { request };
+    const spy = jest.spyOn(requisicao, "request");
+    await requisicao
+      .request(app)
+      .put(`/editoras/${idResposta}`)
+      .send(param)
+      .expect(204);
+
+    expect(spy).toHaveBeenCalled();
+  });
+});
+
 describe("DELETE em editoras/:id", () => {
   it("Deve excluir uma editora", async () => {
     await request(app).delete(`/editoras/${idResposta}`).expect(200);
-  });
-});
-describe("DELETE em editoras/:id", () => {
-  it("Deve retornar recurso selecionado", async () => {
-    await request(app).get(`/editoras/${idResposta}`).expect(200);
   });
 });
